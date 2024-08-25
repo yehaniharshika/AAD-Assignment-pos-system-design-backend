@@ -94,7 +94,28 @@ public class ItemController extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.debug("call item doDelete method");
 
+        var itemCode = req.getParameter("itemCode");
+        logger.debug("delete item code: "+itemCode);
+        if (itemCode == null || itemCode.isEmpty()) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Customer ID is missing");
+            return;
+        }
+        try(var writer = resp.getWriter() ){
+            var itemDAOImpl = new ItemDAOImpl();
+            boolean isDeleted = itemDAOImpl.deleteItem(itemCode,connection);
+
+            if (isDeleted){
+                resp.setStatus(HttpServletResponse.SC_OK);
+                writer.write("item deleted successfully");
+            }else {
+                resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                writer.write("failed to delete item ");
+            }
+        }catch (JsonException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
