@@ -12,3 +12,14 @@
 15:43:01.388 [http-nio-8081-exec-1] INFO  l.i.p.controller.CustomerController - call doDelete method
 15:50:11.195 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - call doPost method
 15:50:37.674 [http-nio-8081-exec-8] DEBUG l.i.p.controller.CustomerController - call doPost method
+16:08:26.137 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - call doGet method
+18:08:04.262 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+18:08:05.247 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+18:08:05.253 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+18:08:05.253 [RMI TCP Connection(2)-127.0.0.1] ERROR l.i.p.controller.ItemController - init method loading failed
+18:09:01.093 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+18:09:01.795 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+18:09:01.799 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+18:10:53.479 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - call doPost method
+18:11:36.932 [http-nio-8081-exec-5] DEBUG l.i.p.controller.ItemController - call doPost method
+18:11:55.597 [http-nio-8081-exec-6] DEBUG l.i.p.controller.ItemController - call doPost method
