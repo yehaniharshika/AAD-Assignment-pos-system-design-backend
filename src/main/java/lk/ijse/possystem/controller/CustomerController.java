@@ -26,11 +26,12 @@ public class CustomerController extends HttpServlet {
     Connection connection;
     @Override
     public void init() throws ServletException {
+        logger.info("initializing CustomerController with call init method");
         try {
             var ctx = new InitialContext();
             DataSource pool = (DataSource) ctx.lookup("java:comp/env/jdbc/posSystem");
             this.connection = pool.getConnection();
-            /*logger.info("connection initialized ",this.connection);*/
+            logger.info("connection initialized ",this.connection);
         } catch (SQLException|NamingException e) {
             logger.error("init method failed");
             e.printStackTrace();
