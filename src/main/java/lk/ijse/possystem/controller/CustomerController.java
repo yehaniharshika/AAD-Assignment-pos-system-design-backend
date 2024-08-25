@@ -95,7 +95,7 @@ public class CustomerController extends HttpServlet {
 
     }
 
-    /*@Override
+    @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("call doDelete method");
 
@@ -119,7 +119,7 @@ public class CustomerController extends HttpServlet {
             logger.error("Error deleting customer", e);
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Internal server error");
         }
-    }*/
+    }
 
 
 
