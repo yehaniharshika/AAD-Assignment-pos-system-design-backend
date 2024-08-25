@@ -128,11 +128,11 @@ public class CustomerController extends HttpServlet {
 
         try (var writer = resp.getWriter()) {
             var customerDAOImpl = new CustomerDAOImpl();
-            var students = customerDAOImpl.getCustomers(connection);
+            var customers = customerDAOImpl.getCustomers(connection);
 
             //Convert List<CustomerDTO> to JSON
             Jsonb jsonb = JsonbBuilder.create();
-            String customerJson = jsonb.toJson(students);
+            String customerJson = jsonb.toJson(customers);
 
             writer.write(customerJson);
         } catch (Exception e) {

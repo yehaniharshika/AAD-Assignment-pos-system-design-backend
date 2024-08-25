@@ -120,6 +120,19 @@ public class ItemController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.debug("call Item doGet method");
+        resp.setContentType("application/json");
 
+        try (var writer = resp.getWriter()){
+            var itemDAOImpl = new ItemDAOImpl();
+            var items = itemDAOImpl.getItems(connection);
+
+            Jsonb jsonb = JsonbBuilder.create();
+            String itemJson = jsonb.toJson(items);
+
+            writer.write(itemJson);
+        }catch (JsonException e){
+            e.printStackTrace();
+        }
     }
 }
