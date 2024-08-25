@@ -40,7 +40,7 @@ public class CustomerController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.debug("call doPost method");
+        logger.debug("call Customer doPost method");
         try (var writer = resp.getWriter()) {
             Jsonb jsonb = JsonbBuilder.create();
             CustomerDTO customerDTO = jsonb.fromJson(req.getReader(), CustomerDTO.class);
@@ -56,15 +56,12 @@ public class CustomerController extends HttpServlet {
         } catch (JsonException e) {
             logger.error("JSON parsing failed", e);
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid JSON");
-        } catch (Exception e) {
-            logger.error("Unexpected error", e);
-            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An unexpected error occurred");
         }
     }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.debug("call doPut method");
+        logger.debug("call Customer doPut method");
         if (!req.getContentType().toLowerCase().startsWith("application/json") || req.getContentType() == null){
             //send error
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
@@ -98,7 +95,7 @@ public class CustomerController extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("call doDelete method");
+        logger.info("call Customer doDelete method");
 
         var customerId = req.getParameter("customerId");
         if (customerId == null || customerId.isEmpty()) {
@@ -126,7 +123,7 @@ public class CustomerController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.debug("call doGet method");
+        logger.debug("call Customer doGet method");
         resp.setContentType("application/json");
 
         try (var writer = resp.getWriter()) {

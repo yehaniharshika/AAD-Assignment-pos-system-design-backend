@@ -41,7 +41,7 @@ public class ItemController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.debug("call doPost method");
+        logger.debug("call Item doPost method");
 
         try(var writer = resp.getWriter()){
             Jsonb jsonb = JsonbBuilder.create();
@@ -62,7 +62,34 @@ public class ItemController extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.debug("call Item doPut method");
+        if (!req.getContentType().toLowerCase().startsWith("application/json") || req.getContentType() == null){
+            //send error
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
 
+        try(var writer = resp.getWriter()){
+            var itemCode = req.getParameter("itemCode");
+            Jsonb jsonb = JsonbBuilder.create();
+
+            var itemDAOImpl = new ItemDAOImpl();
+            var updateItem = jsonb.fromJson(req.getReader(),ItemDTO.class);
+            logger.debug("item code: "+itemCode);
+            logger.debug("update item data: "+updateItem);
+            boolean isUpdated = itemDAOImpl.updateItem(itemCode,updateItem,connection);
+
+            if (isUpdated){
+                resp.setStatus(HttpServletResponse.SC_OK);
+                writer.write("Item updated successfully");
+            }else {
+                resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                writer.write("Item update failed");
+            }
+        }catch (JsonException e){
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            e.printStackTrace();
+        }
     }
 
     @Override
