@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CustomerDAO {
     boolean saveCustomer(CustomerDTO customerDTO, Connection connection) throws SQLException;
-    boolean updateCustomer(String customerId,CustomerDTO updateCustomer,Connection connection) throws SQLException;
+    boolean updateCustomer(String customerId,CustomerDTO customerDTO,Connection connection) throws SQLException;
     boolean deleteCustomer(String customerId,Connection connection) throws SQLException;
     List<CustomerDTO> getCustomers(Connection connection) throws SQLException;
 }

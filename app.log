@@ -1,1 +1,14 @@
 13:52:22.682 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - call doPost method
+15:07:15.564 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - call doPut method
+15:07:15.746 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - customerID: C002
+15:07:15.746 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - updated customer data: CustomerDTO(customerId=C002, name=Dilesha, address=Polonnaruwa, contactNumber=0782323231, email=dilesha@gmail.com)
+15:21:27.802 [http-nio-8081-exec-1] INFO  l.i.p.controller.CustomerController - call doDelete method
+15:26:33.259 [http-nio-8081-exec-1] INFO  l.i.p.controller.CustomerController - call doDelete method
+15:27:39.863 [http-nio-8081-exec-2] INFO  l.i.p.controller.CustomerController - call doDelete method
+15:33:34.079 [http-nio-8081-exec-1] INFO  l.i.p.controller.CustomerController - call doDelete method
+15:33:43.844 [http-nio-8081-exec-4] INFO  l.i.p.controller.CustomerController - call doDelete method
+15:34:28.641 [http-nio-8081-exec-2] INFO  l.i.p.controller.CustomerController - call doDelete method
+15:40:41.585 [http-nio-8081-exec-1] INFO  l.i.p.controller.CustomerController - call doDelete method
+15:43:01.388 [http-nio-8081-exec-1] INFO  l.i.p.controller.CustomerController - call doDelete method
+15:50:11.195 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - call doPost method
+15:50:37.674 [http-nio-8081-exec-8] DEBUG l.i.p.controller.CustomerController - call doPost method

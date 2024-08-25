@@ -60,4 +60,71 @@ public class CustomerController extends HttpServlet {
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An unexpected error occurred");
         }
     }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.debug("call doPut method");
+        if (!req.getContentType().toLowerCase().startsWith("application/json") || req.getContentType() == null){
+            //send error
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+
+        try(var writer = resp.getWriter()){
+            var customerId = req.getParameter("customerId");
+            Jsonb jsonb = JsonbBuilder.create();
+
+            var customerDaoImpl = new CustomerDAOImpl();
+            var updateCustomer = jsonb.fromJson(req.getReader(),CustomerDTO.class);
+            logger.debug("customerID: "+customerId);
+            logger.debug("updated customer data: "+updateCustomer);
+
+            boolean isUpdated = customerDaoImpl.updateCustomer(customerId,updateCustomer,connection);
+
+            if (isUpdated) {
+                resp.setStatus(HttpServletResponse.SC_OK);
+                writer.write("customer updated successfully");
+            } else {
+                resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                writer.write("customer update failed");
+            }
+        }catch (JsonException e){
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            e.printStackTrace();
+        }
+
+    }
+
+    /*@Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.info("call doDelete method");
+
+        var customerId = req.getParameter("customerId");
+        if (customerId == null || customerId.isEmpty()) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Customer ID is missing");
+            return;
+        }
+
+        try (var writer = resp.getWriter()) {
+            var customerDAOImpl = new CustomerDAOImpl();
+            boolean isDeleted = customerDAOImpl.deleteCustomer(customerId, connection);
+
+            if (isDeleted) {
+                resp.setStatus(HttpServletResponse.SC_OK);
+                writer.write("Customer deleted successfully");
+            } else {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Failed to delete customer");
+            }
+        } catch (JsonException e) {
+            logger.error("Error deleting customer", e);
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Internal server error");
+        }
+    }*/
+
+
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
 }
