@@ -1,6 +1,6 @@
 package lk.ijse.possystem.bo.impl;
 
-import lk.ijse.possystem.bo.CustomerBO;
+import lk.ijse.possystem.bo.custom.CustomerBO;
 import lk.ijse.possystem.dao.custom.CustomerDAO;
 import lk.ijse.possystem.dao.impl.CustomerDAOImpl;
 import lk.ijse.possystem.dto.CustomerDTO;
