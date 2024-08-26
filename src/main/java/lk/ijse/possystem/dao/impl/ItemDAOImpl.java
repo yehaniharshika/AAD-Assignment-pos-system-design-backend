@@ -1,7 +1,9 @@
 package lk.ijse.possystem.dao.impl;
 
+import lk.ijse.possystem.dao.SQLUtil;
 import lk.ijse.possystem.dao.custom.ItemDAO;
 import lk.ijse.possystem.dto.ItemDTO;
+import lk.ijse.possystem.entity.Item;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -15,7 +17,8 @@ public class ItemDAOImpl implements ItemDAO {
     public static String DELETE_ITEM  = "DELETE FROM item WHERE itemCode = ?";
     public static String GET_ITEMS = "SELECT * FROM item";
     public static String GET_ITEM_BY_ITEM_CODE = "SELECT * FROM item WHERE itemCode=?";
-    @Override
+
+    /*@Override
     public boolean saveItem(ItemDTO itemDTO, Connection connection){
         try {
             var ps = connection.prepareStatement(SAVE_ITEM);
@@ -98,5 +101,69 @@ public class ItemDAOImpl implements ItemDAO {
             throw new RuntimeException(e);
         }
         return itemDTO;
+    }*/
+
+    @Override
+    public boolean save(Item entity, Connection connection) throws SQLException {
+        String sql = SAVE_ITEM;
+        return SQLUtil.execute(sql,
+                connection,
+                entity.getItemCode(),
+                entity.getItemName(),
+                entity.getUnitPrice(),
+                entity.getQtyOnHand()
+        );
+    }
+
+    @Override
+    public boolean update(String itemCode, Item entity, Connection connection) throws SQLException {
+        String sql = UPDATE_ITEM;
+        return SQLUtil.execute(sql,
+                connection,
+                entity.getItemName(),
+                entity.getUnitPrice(),
+                entity.getQtyOnHand(),
+                itemCode
+        );
+    }
+
+    @Override
+    public boolean delete(String itemCode, Connection connection) throws SQLException {
+        String sql = DELETE_ITEM;
+        return SQLUtil.execute(sql,
+                connection,
+                itemCode
+        );
+    }
+
+    @Override
+    public List<Item> getAll(Connection connection) throws SQLException {
+        String sql = GET_ITEMS;
+        ResultSet resultSet = SQLUtil.execute(sql,connection);
+        List<Item> itemList = new ArrayList<>();
+        while (resultSet.next()){
+            itemList.add(new Item(
+                    resultSet.getString("itemCode"),
+                    resultSet.getString("itemName"),
+                    resultSet.getString("unitPrice"),
+                    resultSet.getString("qtyOnHand")
+            ));
+        }
+        return itemList;
+    }
+
+    @Override
+    public Item getById(String itemCode, Connection connection) throws SQLException {
+        String sql = GET_ITEM_BY_ITEM_CODE;
+        ResultSet resultSet = SQLUtil.execute(sql,connection,itemCode);
+        if (resultSet.next()){
+            return new Item(
+                    resultSet.getString("itemCode"),
+                    resultSet.getString("itemName"),
+                    resultSet.getString("unitPrice"),
+                    resultSet.getString("qtyOnHand")
+            );
+        }
+        return null;
     }
 }
