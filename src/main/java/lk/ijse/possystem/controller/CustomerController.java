@@ -8,6 +8,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lk.ijse.possystem.bo.CustomerBO;
+import lk.ijse.possystem.bo.impl.CustomerBOImpl;
 import lk.ijse.possystem.dao.impl.CustomerDAOImpl;
 import lk.ijse.possystem.dto.CustomerDTO;
 import org.slf4j.Logger;
@@ -25,6 +27,7 @@ import java.util.List;
 public class CustomerController extends HttpServlet {
     static Logger logger = LoggerFactory.getLogger(CustomerController.class);
     Connection connection;
+    private CustomerBO customerBO = new CustomerBOImpl();
     @Override
     public void init() throws ServletException {
         logger.info("initializing CustomerController with call init method");
@@ -46,15 +49,15 @@ public class CustomerController extends HttpServlet {
             Jsonb jsonb = JsonbBuilder.create();
             CustomerDTO customerDTO = jsonb.fromJson(req.getReader(), CustomerDTO.class);
 
-            var saveCustomerData = new CustomerDAOImpl();
-            if (saveCustomerData.saveCustomer(customerDTO, connection)) {
+
+            if (customerBO.saveCustomer(customerDTO,connection)) {
                 writer.write("Customer saved successfully");
                 resp.setStatus(HttpServletResponse.SC_CREATED);
             } else {
                 writer.write("Failed to save customer");
                 resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
             }
-        } catch (JsonException e) {
+        } catch (JsonException | SQLException e) {
             logger.error("JSON parsing failed", e);
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid JSON");
         }
@@ -73,12 +76,12 @@ public class CustomerController extends HttpServlet {
             var customerId = req.getParameter("customerId");
             Jsonb jsonb = JsonbBuilder.create();
 
-            var customerDaoImpl = new CustomerDAOImpl();
+
             var updateCustomer = jsonb.fromJson(req.getReader(),CustomerDTO.class);
             logger.debug("customerID: "+customerId);
             logger.debug("updated customer data: "+updateCustomer);
 
-            boolean isUpdated = customerDaoImpl.updateCustomer(customerId,updateCustomer,connection);
+            boolean isUpdated = customerBO.updateCustomer(customerId,updateCustomer,connection);
 
             if (isUpdated) {
                 resp.setStatus(HttpServletResponse.SC_OK);
@@ -87,7 +90,7 @@ public class CustomerController extends HttpServlet {
                 resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 writer.write("customer update failed");
             }
-        }catch (JsonException e){
+        }catch (JsonException | SQLException e){
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             e.printStackTrace();
         }
@@ -105,8 +108,7 @@ public class CustomerController extends HttpServlet {
         }
 
         try (var writer = resp.getWriter()) {
-            var customerDAOImpl = new CustomerDAOImpl();
-            boolean isDeleted = customerDAOImpl.deleteCustomer(customerId, connection);
+            boolean isDeleted = customerBO.deleteCustomer(customerId, connection);
 
             if (isDeleted) {
                 resp.setStatus(HttpServletResponse.SC_OK);
@@ -114,7 +116,7 @@ public class CustomerController extends HttpServlet {
             } else {
                 resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Failed to delete customer");
             }
-        } catch (JsonException e) {
+        } catch (JsonException | SQLException e) {
             logger.error("Error deleting customer", e);
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Internal server error");
         }
@@ -135,7 +137,7 @@ public class CustomerController extends HttpServlet {
             String customerId = req.getParameter("customerId");
             if (customerId != null && !customerId.isEmpty()) {
                 // Search for a specific customer by ID
-                CustomerDTO customer = customerDAOImpl.getCustomerByCustomerId(customerId, connection);
+                CustomerDTO customer = customerBO.getCustomerByCustomerId(customerId, connection);
 
                 if (customer != null) {
                     String customerJson = jsonb.toJson(customer);
@@ -145,7 +147,7 @@ public class CustomerController extends HttpServlet {
                 }
             } else {
                 // Return all customers
-                List<CustomerDTO> customers = customerDAOImpl.getCustomers(connection);
+                List<CustomerDTO> customers = customerBO.getCustomers(connection);
                 String customersJson = jsonb.toJson(customers);
                 writer.write(customersJson);
             }
@@ -154,7 +156,4 @@ public class CustomerController extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
-
-
-
 }
