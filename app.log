@@ -149,3 +149,104 @@
 16:26:40.344 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - call Item doGet method
 16:26:52.380 [http-nio-8081-exec-3] DEBUG l.i.p.controller.ItemController - call Item doGet method
 16:27:51.175 [http-nio-8081-exec-6] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:16:01.231 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+18:16:01.932 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+18:16:01.935 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+18:16:35.173 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
+18:16:35.425 [http-nio-8081-exec-2] ERROR l.i.p.controller.CustomerController - JSON parsing failed
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'C008' for key 'customer.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at lk.ijse.possystem.dao.SQLUtil.execute(SQLUtil.java:16)
+	at lk.ijse.possystem.dao.impl.CustomerDAOImpl.save(CustomerDAOImpl.java:113)
+	at lk.ijse.possystem.dao.impl.CustomerDAOImpl.save(CustomerDAOImpl.java:14)
+	at lk.ijse.possystem.bo.impl.CustomerBOImpl.saveCustomer(CustomerBOImpl.java:25)
+	at lk.ijse.possystem.controller.CustomerController.doPost(CustomerController.java:53)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at lk.ijse.possystem.filter.CROSFilter.doFilter(CROSFilter.java:26)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+18:17:08.183 [http-nio-8081-exec-3] INFO  l.i.p.controller.CustomerController - call Customer doDelete method
+18:17:27.831 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+18:17:47.672 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+18:18:04.981 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
+19:30:08.127 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+19:30:09.242 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+19:30:09.249 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+19:30:48.976 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
+19:30:49.534 [http-nio-8081-exec-1] ERROR l.i.p.controller.CustomerController - JSON parsing failed
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'C0012' for key 'customer.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at lk.ijse.possystem.dao.SQLUtil.execute(SQLUtil.java:16)
+	at lk.ijse.possystem.dao.impl.CustomerDAOImpl.save(CustomerDAOImpl.java:113)
+	at lk.ijse.possystem.dao.impl.CustomerDAOImpl.save(CustomerDAOImpl.java:14)
+	at lk.ijse.possystem.bo.impl.CustomerBOImpl.saveCustomer(CustomerBOImpl.java:25)
+	at lk.ijse.possystem.controller.CustomerController.doPost(CustomerController.java:53)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at lk.ijse.possystem.filter.CROSFilter.doFilter(CROSFilter.java:26)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+19:32:56.194 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
