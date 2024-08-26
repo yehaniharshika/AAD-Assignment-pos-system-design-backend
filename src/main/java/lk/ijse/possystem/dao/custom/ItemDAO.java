@@ -1,5 +1,6 @@
 package lk.ijse.possystem.dao.custom;
 
+import lk.ijse.possystem.dao.CrudDAO;
 import lk.ijse.possystem.dto.ItemDTO;
 
 import java.sql.Connection;

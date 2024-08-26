@@ -1,7 +1,9 @@
 package lk.ijse.possystem.dao.impl;
 
+import lk.ijse.possystem.dao.SQLUtil;
 import lk.ijse.possystem.dao.custom.CustomerDAO;
 import lk.ijse.possystem.dto.CustomerDTO;
+import lk.ijse.possystem.entity.Customer;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -16,7 +18,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     public static String GET_CUSTOMERS = "SELECT * FROM customer";
     public static String GET_CUSTOMER_BY_CUSTOMER_ID = "SELECT * FROM customer WHERE customerId=?";
 
-    @Override
+    /*@Override
     public boolean saveCustomer(CustomerDTO customerDTO, Connection connection){
         try {
             var ps = connection.prepareStatement(SAVE_CUSTOMER);
@@ -103,5 +105,74 @@ public class CustomerDAOImpl implements CustomerDAO {
             throw new RuntimeException(e);
         }
         return customerDTO;
+    }*/
+
+    @Override
+    public boolean save(Customer entity, Connection connection) throws SQLException {
+        String sql = SAVE_CUSTOMER;
+        return SQLUtil.execute(sql,
+                connection,
+                entity.getCustomerId(),
+                entity.getName(),
+                entity.getAddress(),
+                entity.getContactNumber(),
+                entity.getEmail()
+        );
+    }
+
+    @Override
+    public boolean update(String customerId, Customer entity, Connection connection) throws SQLException {
+        String sql = UPDATE_CUSTOMER;
+        return SQLUtil.execute(sql,
+                connection,
+                entity.getName(),
+                entity.getAddress(),
+                entity.getContactNumber(),
+                entity.getEmail(),
+                customerId
+        );
+    }
+
+    @Override
+    public boolean delete(String customerId, Connection connection) throws SQLException {
+        String sql = DELETE_CUSTOMER;
+        return SQLUtil.execute(sql,
+                connection,
+                customerId
+        );
+    }
+
+    @Override
+    public List<Customer> getAll(Connection connection) throws SQLException {
+        String sql = GET_CUSTOMERS;
+        ResultSet resultSet = SQLUtil.execute(sql,connection);
+        List<Customer> customerList = new ArrayList<>();
+        while (resultSet.next()){
+            customerList.add(new Customer(
+                 resultSet.getString("customerId"),
+                 resultSet.getString("name"),
+                 resultSet.getString("address"),
+                 resultSet.getString("contactNumber"),
+                 resultSet.getString("email")
+            ));
+        }
+        return customerList;
+    }
+
+    @Override
+    public Customer getById(String customerId, Connection connection) throws SQLException {
+        String sql = GET_CUSTOMER_BY_CUSTOMER_ID;
+        ResultSet resultSet = SQLUtil.execute(sql,connection,customerId);
+
+        if (resultSet.next()){
+            return new Customer(
+                  resultSet.getString("customerId"),
+                  resultSet.getString("name"),
+                  resultSet.getString("address"),
+                  resultSet.getString("contactNumber"),
+                  resultSet.getString("email")
+            );
+        }
+        return null;
     }
 }
