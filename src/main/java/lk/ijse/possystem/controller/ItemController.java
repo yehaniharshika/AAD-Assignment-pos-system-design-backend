@@ -19,6 +19,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 @WebServlet(urlPatterns = "/item",loadOnStartup = 2)
 public class ItemController extends HttpServlet {
@@ -125,13 +126,25 @@ public class ItemController extends HttpServlet {
 
         try (var writer = resp.getWriter()){
             var itemDAOImpl = new ItemDAOImpl();
-            var items = itemDAOImpl.getItems(connection);
-
             Jsonb jsonb = JsonbBuilder.create();
-            String itemJson = jsonb.toJson(items);
 
-            writer.write(itemJson);
+            String itemCode = req.getParameter("itemCode");
+            if (itemCode != null && !itemCode.isEmpty()){
+                ItemDTO item = itemDAOImpl.getItemByItemCode(itemCode,connection);
+                if (item != null){
+                    String  itemJson = jsonb.toJson(item);
+                    writer.write(itemJson);
+                }else {
+                    resp.sendError(HttpServletResponse.SC_NOT_FOUND,"item not found");
+                }
+            }else {
+                List<ItemDTO> items = itemDAOImpl.getItems(connection);
+                String itemsJson = jsonb.toJson(items);
+                writer.write(itemsJson);
+            }
+
         }catch (JsonException e){
+            logger.error("Error processing request",e);
             e.printStackTrace();
         }
     }
