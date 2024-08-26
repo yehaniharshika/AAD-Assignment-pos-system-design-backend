@@ -19,6 +19,7 @@ create table item(
 
 create table orders(
     orderId varchar(25) primary key ,
+    orderDate date not null ,
     customerId varchar(25),
     foreign key (customerId) references customer(customerId) on update cascade on delete cascade
 );
@@ -28,6 +29,7 @@ create table orderDetails(
     itemCode varchar(25),
     qty int(25),
     unitPrice varchar(45),
+    total varchar(100),
     foreign key (itemCode) references item(itemCode) on UPDATE cascade on DELETE cascade,
-    foreign key (orderId) references orders(orderId) on DELETE cascade on DELETE cascade
+    foreign key (orderId) references orders(orderId) on UPDATE cascade on DELETE cascade
 );

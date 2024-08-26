@@ -42,3 +42,7 @@
 18:49:13.923 [http-nio-8081-exec-4] DEBUG l.i.p.controller.ItemController - delete item code: null
 18:49:23.559 [http-nio-8081-exec-6] DEBUG l.i.p.controller.ItemController - call item doDelete method
 18:49:23.559 [http-nio-8081-exec-6] DEBUG l.i.p.controller.ItemController - delete item code: null
+18:55:39.120 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+18:55:39.820 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+18:55:39.825 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+18:55:47.696 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - call Item doGet method
