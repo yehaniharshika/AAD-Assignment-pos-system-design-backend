@@ -46,3 +46,33 @@
 18:55:39.820 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
 18:55:39.825 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
 18:55:47.696 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - call Item doGet method
+07:38:46.244 [RMI TCP Connection(3)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+07:38:47.237 [RMI TCP Connection(3)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+07:38:47.241 [RMI TCP Connection(3)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+10:51:30.411 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
+10:52:11.539 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
+11:23:37.154 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
+11:29:26.165 [http-nio-8081-exec-8] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
+11:31:04.631 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
+12:01:24.727 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - call Customer doPut method
+12:01:24.777 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - customerID: C002
+12:01:24.785 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - updated customer data: CustomerDTO(customerId=C002, name=Dilesha, address=4/P Polonnaruwa, contactNumber=0760000000, email=dilesha@gmail.com)
+12:19:40.232 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
+12:27:53.036 [http-nio-8081-exec-9] INFO  l.i.p.controller.CustomerController - call Customer doDelete method
+12:44:25.583 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+12:44:26.671 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+12:47:58.649 [http-nio-8081-exec-5] INFO  l.i.p.controller.CustomerController - call Customer doDelete method
+12:48:17.333 [http-nio-8081-exec-7] INFO  l.i.p.controller.CustomerController - call Customer doDelete method
+12:49:25.381 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+12:49:25.424 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+12:49:37.380 [http-nio-8081-exec-2] INFO  l.i.p.controller.CustomerController - call Customer doDelete method
+12:49:37.406 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+12:52:09.103 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+12:52:09.334 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+13:01:29.508 [http-nio-8081-exec-8] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+13:01:29.626 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+14:33:03.367 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+14:33:04.244 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+14:33:04.248 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+14:33:15.054 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+14:34:39.699 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - call Customer doGet method

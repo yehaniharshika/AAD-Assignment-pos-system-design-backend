@@ -19,6 +19,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 @WebServlet(urlPatterns = "/customer",loadOnStartup = 2)
 public class CustomerController extends HttpServlet {
@@ -128,15 +129,32 @@ public class CustomerController extends HttpServlet {
 
         try (var writer = resp.getWriter()) {
             var customerDAOImpl = new CustomerDAOImpl();
-            var customers = customerDAOImpl.getCustomers(connection);
-
-            //Convert List<CustomerDTO> to JSON
             Jsonb jsonb = JsonbBuilder.create();
-            String customerJson = jsonb.toJson(customers);
 
-            writer.write(customerJson);
+            // Check if there's a customerId parameter
+            String customerId = req.getParameter("customerId");
+            if (customerId != null && !customerId.isEmpty()) {
+                // Search for a specific customer by ID
+                CustomerDTO customer = customerDAOImpl.getCustomerByCustomerId(customerId, connection);
+
+                if (customer != null) {
+                    String customerJson = jsonb.toJson(customer);
+                    writer.write(customerJson);
+                } else {
+                    resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Customer not found");
+                }
+            } else {
+                // Return all customers
+                List<CustomerDTO> customers = customerDAOImpl.getCustomers(connection);
+                String customersJson = jsonb.toJson(customers);
+                writer.write(customersJson);
+            }
         } catch (Exception e) {
+            logger.error("Error processing request", e);
             throw new RuntimeException(e);
         }
     }
+
+
+
 }
