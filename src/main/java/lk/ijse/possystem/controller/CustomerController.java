@@ -27,7 +27,7 @@ import java.util.List;
 public class CustomerController extends HttpServlet {
     static Logger logger = LoggerFactory.getLogger(CustomerController.class);
     Connection connection;
-    private CustomerBO customerBO = new CustomerBOImpl();
+    private CustomerBOImpl customerBO = new CustomerBOImpl();
     @Override
     public void init() throws ServletException {
         logger.info("initializing CustomerController with call init method");

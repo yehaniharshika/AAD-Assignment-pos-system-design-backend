@@ -8,6 +8,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lk.ijse.possystem.bo.custom.CustomerBO;
+import lk.ijse.possystem.bo.impl.CustomerBOImpl;
+import lk.ijse.possystem.bo.impl.ItemBOImpl;
 import lk.ijse.possystem.dao.impl.ItemDAOImpl;
 import lk.ijse.possystem.dto.ItemDTO;
 import org.slf4j.Logger;
@@ -25,6 +28,7 @@ import java.util.List;
 public class ItemController extends HttpServlet {
     static Logger logger = LoggerFactory.getLogger(ItemController.class);
     Connection connection;
+    private ItemBOImpl itemBO = new ItemBOImpl();
 
     @Override
     public void init() throws ServletException {
@@ -48,15 +52,15 @@ public class ItemController extends HttpServlet {
             Jsonb jsonb = JsonbBuilder.create();
             ItemDTO itemDTO = jsonb.fromJson(req.getReader(),ItemDTO.class);
 
-            var itemDAOImpl = new ItemDAOImpl();
-            if (itemDAOImpl.saveItem(itemDTO,connection)){
+            //var itemDAOImpl = new ItemDAOImpl();
+            if (itemBO.saveItem(itemDTO,connection)){
                 writer.write("Item saved successfully");
                 resp.setStatus(HttpServletResponse.SC_CREATED);
             }else {
                 writer.write("Failed to save item");
                 resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
             }
-        }catch (JsonException e){
+        }catch (JsonException | SQLException e){
             e.printStackTrace();
         }
     }
@@ -74,11 +78,10 @@ public class ItemController extends HttpServlet {
             var itemCode = req.getParameter("itemCode");
             Jsonb jsonb = JsonbBuilder.create();
 
-            var itemDAOImpl = new ItemDAOImpl();
             var updateItem = jsonb.fromJson(req.getReader(),ItemDTO.class);
             logger.debug("item code: "+itemCode);
             logger.debug("update item data: "+updateItem);
-            boolean isUpdated = itemDAOImpl.updateItem(itemCode,updateItem,connection);
+            boolean isUpdated = itemBO.updateItem(itemCode,updateItem,connection);
 
             if (isUpdated){
                 resp.setStatus(HttpServletResponse.SC_OK);
@@ -87,7 +90,7 @@ public class ItemController extends HttpServlet {
                 resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 writer.write("Item update failed");
             }
-        }catch (JsonException e){
+        }catch (JsonException | SQLException e){
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             e.printStackTrace();
         }
@@ -105,7 +108,7 @@ public class ItemController extends HttpServlet {
         }
         try(var writer = resp.getWriter() ){
             var itemDAOImpl = new ItemDAOImpl();
-            boolean isDeleted = itemDAOImpl.deleteItem(itemCode,connection);
+            boolean isDeleted = itemBO.deleteItem(itemCode,connection);
 
             if (isDeleted){
                 resp.setStatus(HttpServletResponse.SC_OK);
@@ -114,7 +117,7 @@ public class ItemController extends HttpServlet {
                 resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
                 writer.write("failed to delete item ");
             }
-        }catch (JsonException e){
+        }catch (JsonException | SQLException e){
             e.printStackTrace();
         }
     }
@@ -130,7 +133,7 @@ public class ItemController extends HttpServlet {
 
             String itemCode = req.getParameter("itemCode");
             if (itemCode != null && !itemCode.isEmpty()){
-                ItemDTO item = itemDAOImpl.getItemByItemCode(itemCode,connection);
+                ItemDTO item = itemBO.getItemByItemCode(itemCode,connection);
                 if (item != null){
                     String  itemJson = jsonb.toJson(item);
                     writer.write(itemJson);
@@ -138,12 +141,12 @@ public class ItemController extends HttpServlet {
                     resp.sendError(HttpServletResponse.SC_NOT_FOUND,"item not found");
                 }
             }else {
-                List<ItemDTO> items = itemDAOImpl.getItems(connection);
+                List<ItemDTO> items = itemBO.getItems(connection);
                 String itemsJson = jsonb.toJson(items);
                 writer.write(itemsJson);
             }
 
-        }catch (JsonException e){
+        }catch (JsonException | SQLException e){
             logger.error("Error processing request",e);
             e.printStackTrace();
         }

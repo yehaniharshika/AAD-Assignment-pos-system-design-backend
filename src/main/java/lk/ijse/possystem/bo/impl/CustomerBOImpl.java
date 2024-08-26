@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerBOImpl implements CustomerBO {
-    private CustomerDAO customerDAO = new CustomerDAOImpl();
+    private CustomerDAOImpl customerDAO = new CustomerDAOImpl();
     @Override
     public boolean saveCustomer(CustomerDTO customerDTO, Connection connection) throws SQLException {
         Customer customer = new Customer(
