@@ -14,6 +14,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     public static String UPDATE_CUSTOMER = "UPDATE customer SET name=?,address=?,contactNumber=?,email=? WHERE customerId=?";
     public static String DELETE_CUSTOMER = "DELETE FROM customer WHERE customerId = ?";
     public static String GET_CUSTOMERS = "SELECT * FROM customer";
+    public static String GET_CUSTOMER_BY_CUSTOMER_ID = "SELECT * FROM customer WHERE customerId=?";
 
     @Override
     public boolean saveCustomer(CustomerDTO customerDTO, Connection connection){
@@ -79,5 +80,28 @@ public class CustomerDAOImpl implements CustomerDAO {
             throw new RuntimeException(e);
         }
         return customerList;
+    }
+
+    @Override
+    public CustomerDTO getCustomerByCustomerId(String customerId, Connection connection){
+        CustomerDTO customerDTO = null;
+        try {
+            var ps = connection.prepareStatement(GET_CUSTOMER_BY_CUSTOMER_ID);
+            ps.setString(1,customerId);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()){
+                customerDTO = new CustomerDTO();
+                customerDTO.setCustomerId(resultSet.getString("customerId"));
+                customerDTO.setName(resultSet.getString("name"));
+                customerDTO.setAddress(resultSet.getString("address"));
+                customerDTO.setContactNumber(resultSet.getString("contactNumber"));
+                customerDTO.setEmail(resultSet.getString("email"));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return customerDTO;
     }
 }
