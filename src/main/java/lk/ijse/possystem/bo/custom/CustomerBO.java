@@ -1,4 +1,4 @@
-package lk.ijse.possystem.bo;
+package lk.ijse.possystem.bo.custom;
 
 import lk.ijse.possystem.dto.CustomerDTO;
 

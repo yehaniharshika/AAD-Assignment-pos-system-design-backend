@@ -8,7 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lk.ijse.possystem.bo.CustomerBO;
+import lk.ijse.possystem.bo.custom.CustomerBO;
 import lk.ijse.possystem.bo.impl.CustomerBOImpl;
 import lk.ijse.possystem.dao.impl.CustomerDAOImpl;
 import lk.ijse.possystem.dto.CustomerDTO;

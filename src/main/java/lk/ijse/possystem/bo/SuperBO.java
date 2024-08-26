@@ -1,4 +1,4 @@
 package lk.ijse.possystem.bo;
 
-public interface OrderBO {
+public interface SuperBO {
 }
