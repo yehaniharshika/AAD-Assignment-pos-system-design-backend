@@ -1,4 +1,4 @@
-package lk.ijse.possystem.dao;
+package lk.ijse.possystem.dao.custom;
 
 import lk.ijse.possystem.dto.ItemDTO;
 
@@ -11,4 +11,5 @@ public interface ItemDAO {
     boolean updateItem(String itemCode,ItemDTO itemDTO,Connection connection) throws SQLException;
     boolean deleteItem(String itemCode,Connection connection) throws SQLException;
     List<ItemDTO> getItems(Connection connection) throws SQLException;
+    ItemDTO getItemByItemCode(String itemCode, Connection connection) throws SQLException;
 }

@@ -1,6 +1,6 @@
 package lk.ijse.possystem.dao.impl;
 
-import lk.ijse.possystem.dao.CustomerDAO;
+import lk.ijse.possystem.dao.custom.CustomerDAO;
 import lk.ijse.possystem.dto.CustomerDTO;
 
 import java.sql.Connection;

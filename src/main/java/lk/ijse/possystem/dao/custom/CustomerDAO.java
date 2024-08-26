@@ -1,4 +1,4 @@
-package lk.ijse.possystem.dao;
+package lk.ijse.possystem.dao.custom;
 
 import lk.ijse.possystem.dto.CustomerDTO;
 
@@ -11,6 +11,5 @@ public interface CustomerDAO {
     boolean updateCustomer(String customerId,CustomerDTO customerDTO,Connection connection) throws SQLException;
     boolean deleteCustomer(String customerId,Connection connection) throws SQLException;
     List<CustomerDTO> getCustomers(Connection connection) throws SQLException;
-
     CustomerDTO getCustomerByCustomerId(String customerId,Connection connection) throws SQLException;
 }

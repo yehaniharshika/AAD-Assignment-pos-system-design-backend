@@ -1,4 +1,4 @@
-package lk.ijse.possystem.dao;
+package lk.ijse.possystem.dao.custom;
 
 import lk.ijse.possystem.dto.CustomerDTO;
 import lk.ijse.possystem.dto.OrderDTO;

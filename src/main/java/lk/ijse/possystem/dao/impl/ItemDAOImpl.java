@@ -1,6 +1,6 @@
 package lk.ijse.possystem.dao.impl;
 
-import lk.ijse.possystem.dao.ItemDAO;
+import lk.ijse.possystem.dao.custom.ItemDAO;
 import lk.ijse.possystem.dto.ItemDTO;
 
 import java.sql.Connection;
@@ -14,6 +14,7 @@ public class ItemDAOImpl implements ItemDAO {
     public static String UPDATE_ITEM  = "UPDATE item SET itemName=?,unitPrice=?,qtyOnHand=? WHERE itemCode=?";
     public static String DELETE_ITEM  = "DELETE FROM item WHERE itemCode = ?";
     public static String GET_ITEMS = "SELECT * FROM item";
+    public static String GET_ITEM_BY_ITEM_CODE = "SELECT * FROM item WHERE itemCode=?";
     @Override
     public boolean saveItem(ItemDTO itemDTO, Connection connection){
         try {
@@ -75,5 +76,27 @@ public class ItemDAOImpl implements ItemDAO {
             throw new RuntimeException(e);
         }
         return itemList;
+    }
+
+    @Override
+    public ItemDTO getItemByItemCode(String itemCode, Connection connection){
+        ItemDTO itemDTO = null;
+
+        try {
+            var ps = connection.prepareStatement(GET_ITEM_BY_ITEM_CODE);
+            ps.setString(1,itemCode);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()){
+                itemDTO = new ItemDTO();
+                itemDTO.setItemCode(resultSet.getString("itemCode"));
+                itemDTO.setItemName(resultSet.getString("itemName"));
+                itemDTO.setUnitPrice(resultSet.getString("unitPrice"));
+                itemDTO.setQtyOnHand(resultSet.getString("qtyOnHand"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return itemDTO;
     }
 }
