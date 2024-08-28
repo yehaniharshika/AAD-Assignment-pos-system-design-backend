@@ -80,4 +80,9 @@ public class ItemBOImpl implements ItemBO {
     public boolean decreaseItemQuantity(String itemCode, int quantity, Connection connection) throws SQLException {
         return itemDAO.decreaseItemQuantity(itemCode,quantity,connection);
     }
+
+    @Override
+    public String generateNextItemCode(Connection connection) throws SQLException {
+        return itemDAO.generateId(connection);
+    }
 }
