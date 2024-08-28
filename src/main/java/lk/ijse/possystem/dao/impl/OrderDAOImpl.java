@@ -165,7 +165,7 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public String generateOrderId(Connection connection) throws SQLException {
+    public String generateId(Connection connection) throws SQLException {
         String lastOrderId = null;
         ResultSet resultSet = SQLUtil.execute(GET_LAST_ORDER_ID, connection);
         if (resultSet.next()) {

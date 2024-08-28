@@ -19,6 +19,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     public static String GET_CUSTOMERS = "SELECT * FROM customer";
     public static String GET_CUSTOMER_BY_CUSTOMER_ID = "SELECT * FROM customer WHERE customerId=?";
     public static String GET_ALL_CUSTOMER_IDS = "SELECT customerId FROM customer";
+    public static String GET_LAST_CUSTOMER_ID = "SELECT customerId FROM `customer` ORDER BY customerId DESC LIMIT 1";
 
     /*@Override
     public boolean saveCustomer(CustomerDTO customerDTO, Connection connection){
@@ -176,6 +177,23 @@ public class CustomerDAOImpl implements CustomerDAO {
             );
         }
         return null;
+    }
+
+    @Override
+    public String generateId(Connection connection) throws SQLException {
+        String lastCustomerId = null;
+
+        ResultSet resultSet = SQLUtil.execute(GET_LAST_CUSTOMER_ID, connection);
+        if (resultSet.next()) {
+            lastCustomerId = resultSet.getString("customerId");
+        }
+
+        if (lastCustomerId != null) {
+            int lastNumber = Integer.parseInt(lastCustomerId.split("-")[1]);
+            lastNumber++;
+            return "O-" + String.format("%03d", lastNumber);
+        }
+        return "C-001";
     }
 
     @Override

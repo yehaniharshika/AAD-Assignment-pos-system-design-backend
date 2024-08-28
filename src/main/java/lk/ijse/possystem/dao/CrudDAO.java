@@ -17,4 +17,5 @@ public interface CrudDAO<T> extends SuperDAO {
     List<T> getAll(Connection connection) throws SQLException;
 
     T getById(String id, Connection connection) throws SQLException;
+    String generateId(Connection connection) throws SQLException;
 }

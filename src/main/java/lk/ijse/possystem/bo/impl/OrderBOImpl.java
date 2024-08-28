@@ -92,7 +92,7 @@ public class OrderBOImpl implements OrderBO {
 
     @Override
     public String generateOrderId(Connection connection) throws SQLException {
-        return orderDAO.generateOrderId(connection);
+        return orderDAO.generateId(connection);
     }
 
     @Override
