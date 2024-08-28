@@ -1281,3 +1281,179 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child 
 17:56:56.806 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - delete item code: I006
 17:58:16.996 [http-nio-8081-exec-3] DEBUG l.i.p.controller.ItemController - call Item doGet method
 17:58:16.996 [http-nio-8081-exec-3] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-001
+18:25:29.800 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:25:29.801 [http-nio-8081-exec-6] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:25:29.803 [http-nio-8081-exec-7] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:25:29.808 [http-nio-8081-exec-8] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+18:25:29.841 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:25:29.841 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:25:29.848 [http-nio-8081-exec-7] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-001
+18:25:29.850 [http-nio-8081-exec-9] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:25:29.852 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:25:29.856 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:25:29.856 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:26:36.179 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:26:36.183 [http-nio-8081-exec-5] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:26:36.183 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:26:36.191 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+18:26:36.204 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:26:36.204 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:26:36.211 [http-nio-8081-exec-5] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-001
+18:26:36.217 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:26:36.217 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:26:36.223 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:26:36.224 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:26:45.643 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - call Item doPost method
+18:26:45.745 [http-nio-8081-exec-5] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:26:45.747 [http-nio-8081-exec-7] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:26:45.752 [http-nio-8081-exec-7] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-002
+18:26:56.492 [http-nio-8081-exec-2] DEBUG l.i.p.controller.ItemController - call Item doPost method
+18:26:56.516 [http-nio-8081-exec-4] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:26:56.517 [http-nio-8081-exec-3] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:26:56.522 [http-nio-8081-exec-3] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-003
+18:31:16.285 [http-nio-8081-exec-5] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:32:28.896 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:32:28.898 [http-nio-8081-exec-9] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:32:28.898 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:32:28.904 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+18:32:28.914 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:32:28.916 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:32:28.919 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-003
+18:32:28.920 [http-nio-8081-exec-3] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:32:28.921 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:32:28.926 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:32:28.926 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:38:42.666 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:38:42.667 [http-nio-8081-exec-9] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:38:42.667 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:38:42.671 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+18:38:42.682 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-003
+18:38:42.682 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:38:42.682 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:38:42.690 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:38:42.690 [http-nio-8081-exec-4] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:38:42.693 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:38:42.693 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:46:00.570 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:46:00.578 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:46:00.579 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:46:00.579 [http-nio-8081-exec-2] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:46:00.584 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+18:46:00.592 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-003
+18:46:00.593 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:46:00.593 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:46:00.607 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - Action parameter: generateCustomerId
+18:46:00.610 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - New Customer ID: C-001
+18:46:00.610 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:46:00.614 [http-nio-8081-exec-7] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:46:00.614 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:46:00.614 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:46:42.160 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
+18:46:42.205 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:46:42.209 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:46:42.209 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:46:42.210 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:46:42.212 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - Action parameter: generateCustomerId
+18:46:42.214 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - New Customer ID: C-002
+18:48:28.714 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:48:28.717 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:48:28.717 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:48:28.719 [http-nio-8081-exec-5] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:48:28.723 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+18:48:28.735 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - Action parameter: generateCustomerId
+18:48:28.736 [http-nio-8081-exec-5] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-003
+18:48:28.737 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - New Customer ID: C-002
+18:48:28.743 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:48:28.744 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:48:28.753 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:48:28.753 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:48:28.757 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:48:28.757 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:48:41.008 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - call Item doPut method
+18:48:41.012 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - item code: I-001
+18:48:41.012 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - update item data: ItemDTO(itemCode=null, itemName=Chocolate, unitPrice=30, qtyOnHand=8)
+18:49:01.135 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - call Item doPut method
+18:49:01.142 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - item code: I-002
+18:49:01.142 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - update item data: ItemDTO(itemCode=null, itemName=Buscuit, unitPrice=100, qtyOnHand=8)
+18:49:17.864 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - OrderController doPost method called
+18:49:27.037 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:49:27.042 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:49:27.045 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:49:27.045 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+18:49:27.044 [http-nio-8081-exec-6] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:49:27.060 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:49:27.060 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:49:27.061 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - Action parameter: generateCustomerId
+18:49:27.066 [http-nio-8081-exec-6] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-003
+18:49:27.066 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - New Customer ID: C-002
+18:49:27.071 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:49:27.075 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:49:27.076 [http-nio-8081-exec-10] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:49:27.078 [http-nio-8081-exec-5] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:51:22.275 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:51:22.277 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:51:22.281 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:51:22.283 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+18:51:22.282 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:51:22.304 [http-nio-8081-exec-3] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:51:22.305 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:51:22.305 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:51:22.311 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-003
+18:51:22.314 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:51:22.317 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - Action parameter: generateCustomerId
+18:51:22.319 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:51:22.319 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:51:22.329 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - New Customer ID: C-002
+18:51:23.962 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:51:23.964 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:51:23.966 [http-nio-8081-exec-2] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:51:23.967 [http-nio-8081-exec-5] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:51:23.974 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:51:23.974 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:51:23.980 [http-nio-8081-exec-5] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-003
+18:51:23.984 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - Action parameter: generateCustomerId
+18:51:23.992 [http-nio-8081-exec-8] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+18:51:23.996 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - New Customer ID: C-002
+18:51:24.007 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:51:24.007 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:51:24.011 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:51:24.011 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:51:57.720 [http-nio-8081-exec-8] DEBUG l.i.p.controller.CustomerController - call Customer doPost method
+18:51:57.750 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:51:57.753 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:51:57.753 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:51:57.753 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:51:57.756 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - Action parameter: generateCustomerId
+18:51:57.758 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - New Customer ID: C-003
+18:52:03.142 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:52:03.145 [http-nio-8081-exec-5] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:52:03.146 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:52:03.150 [http-nio-8081-exec-4] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:52:03.159 [http-nio-8081-exec-1] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+18:52:03.166 [http-nio-8081-exec-4] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-003
+18:52:03.167 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - Action parameter: generateCustomerId
+18:52:03.169 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - New Customer ID: C-003
+18:52:03.174 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:52:03.175 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:52:03.178 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - call Item doGet method
+18:52:03.182 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+18:52:03.191 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+18:52:03.192 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+18:52:12.028 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - call Item doPut method
+18:52:12.034 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - item code: I-001
+18:52:12.034 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - update item data: ItemDTO(itemCode=null, itemName=Chocolate, unitPrice=30, qtyOnHand=6)
+18:52:22.650 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - OrderController doPost method called
+19:18:08.181 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+19:18:08.950 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+19:18:08.960 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing OrderController with call init method
+19:18:08.990 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+19:18:08.991 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+19:19:08.990 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+19:19:09.073 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+19:19:09.073 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Order ID parameter: null
+19:19:21.922 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+19:19:21.922 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - Action parameter: generateOrderId
+19:19:21.939 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - New Order ID: O-003
+19:20:20.749 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+19:20:21.231 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+19:20:21.231 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - Order ID parameter: O-001

@@ -19,6 +19,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 @WebServlet(urlPatterns = "/order",loadOnStartup = 2)
 public class OrderController extends HttpServlet {
@@ -68,19 +69,40 @@ public class OrderController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.debug("OrderController doGet method called");
+        resp.setContentType("application/json");
 
         try (var writer = resp.getWriter()) {
             Jsonb jsonb = JsonbBuilder.create();
 
-            // Logic to generate new order ID
-            if ("generateOrderId".equals(req.getParameter("action"))) {
+            String action = req.getParameter("action");
+            logger.debug("Action parameter: " + action);
+
+            if ("generateOrderId".equals(action)) {
+                // Logic to generate new order ID
                 var newOrderId = orderBO.generateOrderId(connection);
+                logger.debug("New Order ID: " + newOrderId);
                 writer.write(jsonb.toJson(newOrderId));
+
+            } else {
+                // Handle other actions, such as fetching order details
+                String orderId = req.getParameter("orderId");
+                logger.debug("Order ID parameter: " + orderId);
+
+                if (orderId != null && !orderId.isEmpty()) {
+                    OrderDTO order = orderBO.getOrderByOrderId(orderId, connection);
+                    if (order != null) {
+                        writer.write(jsonb.toJson(order));
+                    } else {
+                        resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Order not found");
+                    }
+                } else {
+                    List<OrderDTO> orders = orderBO.getOrder(connection);
+                    writer.write(jsonb.toJson(orders));
+                }
             }
         } catch (JsonException | SQLException e) {
             logger.error("Error in OrderController doGet", e);
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to process request");
         }
     }
-
 }
