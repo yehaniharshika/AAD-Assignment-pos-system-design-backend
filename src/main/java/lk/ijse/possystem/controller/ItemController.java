@@ -127,28 +127,36 @@ public class ItemController extends HttpServlet {
         logger.debug("call Item doGet method");
         resp.setContentType("application/json");
 
-        try (var writer = resp.getWriter()){
-            var itemDAOImpl = new ItemDAOImpl();
+        try (var writer = resp.getWriter()) {
             Jsonb jsonb = JsonbBuilder.create();
 
+            String action = req.getParameter("action");
             String itemCode = req.getParameter("itemCode");
-            if (itemCode != null && !itemCode.isEmpty()){
-                ItemDTO item = itemBO.getItemByItemCode(itemCode,connection);
-                if (item != null){
-                    String  itemJson = jsonb.toJson(item);
+
+            if ("generateItemCode".equals(action)) {
+                // Logic to generate new item code
+                var newItemCode = itemBO.generateNextItemCode(connection);
+                logger.debug("Generated Item Code: " + newItemCode);
+                writer.write(jsonb.toJson(newItemCode));
+
+            } else if (itemCode != null && !itemCode.isEmpty()) {
+                ItemDTO item = itemBO.getItemByItemCode(itemCode, connection);
+                if (item != null) {
+                    String itemJson = jsonb.toJson(item);
                     writer.write(itemJson);
-                }else {
-                    resp.sendError(HttpServletResponse.SC_NOT_FOUND,"item not found");
+                } else {
+                    resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Item not found");
                 }
-            }else {
+            } else {
                 List<ItemDTO> items = itemBO.getItems(connection);
                 String itemsJson = jsonb.toJson(items);
                 writer.write(itemsJson);
             }
 
-        }catch (JsonException | SQLException e){
-            logger.error("Error processing request",e);
-            e.printStackTrace();
+        } catch (JsonException | SQLException e) {
+            logger.error("Error processing request", e);
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to process request");
         }
     }
+
 }

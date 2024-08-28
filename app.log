@@ -1261,3 +1261,23 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child 
 17:41:36.484 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing OrderController with call init method
 17:41:36.504 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
 17:41:36.504 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+17:48:33.737 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:48:33.803 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+17:48:33.803 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+17:48:38.589 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:48:38.589 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+17:48:38.589 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+17:52:09.093 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+17:52:09.868 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:52:09.878 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing OrderController with call init method
+17:52:09.900 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:52:09.901 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+17:53:45.962 [http-nio-8081-exec-1] DEBUG l.i.p.controller.ItemController - call Item doGet method
+17:53:52.013 [http-nio-8081-exec-3] DEBUG l.i.p.controller.ItemController - call Item doGet method
+17:53:58.775 [http-nio-8081-exec-4] DEBUG l.i.p.controller.ItemController - call Item doGet method
+17:54:52.488 [http-nio-8081-exec-7] DEBUG l.i.p.controller.ItemController - call item doDelete method
+17:54:52.488 [http-nio-8081-exec-7] DEBUG l.i.p.controller.ItemController - delete item code: I003
+17:56:56.806 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - call item doDelete method
+17:56:56.806 [http-nio-8081-exec-10] DEBUG l.i.p.controller.ItemController - delete item code: I006
+17:58:16.996 [http-nio-8081-exec-3] DEBUG l.i.p.controller.ItemController - call Item doGet method
+17:58:16.996 [http-nio-8081-exec-3] DEBUG l.i.p.controller.ItemController - Generated Item Code: I-001
