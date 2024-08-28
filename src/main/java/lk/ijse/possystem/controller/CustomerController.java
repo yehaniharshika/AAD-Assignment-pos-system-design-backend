@@ -130,7 +130,7 @@ public class CustomerController extends HttpServlet {
         resp.setContentType("application/json");
 
         try (var writer = resp.getWriter()) {
-            var customerDAOImpl = new CustomerDAOImpl();
+
             Jsonb jsonb = JsonbBuilder.create();
 
             // Check if there's a customerId parameter

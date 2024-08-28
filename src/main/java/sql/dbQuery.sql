@@ -21,6 +21,11 @@ create table orders(
     orderId varchar(25) primary key ,
     orderDate date not null ,
     customerId varchar(25),
+    total varchar(50),
+    discount varchar(50),
+    subTotal varchar(50),
+    cash varchar(60),
+    balance varchar(60),
     foreign key (customerId) references customer(customerId) on update cascade on delete cascade
 );
 
