@@ -13,4 +13,5 @@ public interface CustomerBO {
     List<CustomerDTO> getCustomers(Connection connection) throws SQLException;
     CustomerDTO getCustomerByCustomerId(String customerId,Connection connection) throws SQLException;
     List<String> getAllCustomerIDs(Connection connection) throws SQLException;
+    String generateNextCustomerId(Connection connection) throws SQLException;
 }
