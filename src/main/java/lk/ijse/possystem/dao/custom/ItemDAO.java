@@ -14,4 +14,6 @@ public interface ItemDAO extends CrudDAO<Item> {
     boolean deleteItem(String itemCode,Connection connection) throws SQLException;
     List<ItemDTO> getItems(Connection connection) throws SQLException;
     ItemDTO getItemByItemCode(String itemCode, Connection connection) throws SQLException;*/
+    List<String> getAllItemCodes(Connection connection) throws SQLException;
+    boolean decreaseItemQuantity(String itemCode, int quantity,Connection connection) throws SQLException;
 }
