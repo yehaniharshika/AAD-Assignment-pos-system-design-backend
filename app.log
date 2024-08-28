@@ -1211,3 +1211,53 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child 
 16:52:04.275 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
 16:52:04.304 [http-nio-8081-exec-7] DEBUG l.i.p.controller.ItemController - call Item doGet method
 16:52:04.310 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - call Customer doGet method
+16:57:38.586 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - call Item doPut method
+16:57:38.611 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - item code: I006
+16:57:38.611 [http-nio-8081-exec-8] DEBUG l.i.p.controller.ItemController - update item data: ItemDTO(itemCode=null, itemName=cinamon, unitPrice=1000, qtyOnHand=7)
+17:27:33.014 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+17:27:33.859 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:27:33.868 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing OrderController with call init method
+17:27:33.898 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:27:33.899 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+17:28:33.684 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:28:47.412 [http-nio-8081-exec-3] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:28:54.265 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:29:52.244 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:30:01.566 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:30:59.429 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+17:31:00.114 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:31:00.123 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing OrderController with call init method
+17:31:00.141 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:31:00.142 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+17:31:07.093 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:31:27.030 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:31:29.346 [http-nio-8081-exec-6] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:32:08.657 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
+17:32:24.704 [http-nio-8081-exec-7] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:34:22.881 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+17:34:23.483 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:34:23.492 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing OrderController with call init method
+17:34:23.511 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:34:23.512 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+17:34:34.344 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:34:45.969 [http-nio-8081-exec-4] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:38:04.101 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+17:38:04.709 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:38:04.718 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing OrderController with call init method
+17:38:04.737 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:38:04.737 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+17:38:18.457 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:38:18.525 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Action parameter: generateCustomerId
+17:40:03.045 [http-nio-8081-exec-4] INFO  l.i.p.controller.CustomerController - call Customer doDelete method
+17:40:08.211 [http-nio-8081-exec-5] INFO  l.i.p.controller.CustomerController - call Customer doDelete method
+17:40:13.674 [http-nio-8081-exec-6] INFO  l.i.p.controller.CustomerController - call Customer doDelete method
+17:40:19.044 [http-nio-8081-exec-7] INFO  l.i.p.controller.CustomerController - call Customer doDelete method
+17:40:25.489 [http-nio-8081-exec-8] INFO  l.i.p.controller.CustomerController - call Customer doDelete method
+17:40:45.277 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+17:40:45.293 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - Action parameter: generateCustomerId
+17:40:45.308 [http-nio-8081-exec-9] DEBUG l.i.p.controller.CustomerController - New Customer ID: C-001
+17:41:35.872 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+17:41:36.475 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:41:36.484 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing OrderController with call init method
+17:41:36.504 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+17:41:36.504 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method

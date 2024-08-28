@@ -122,38 +122,44 @@ public class CustomerController extends HttpServlet {
         }
     }
 
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.debug("call Customer doGet method");
+        logger.debug("CustomerController doGet method called");
         resp.setContentType("application/json");
 
         try (var writer = resp.getWriter()) {
-
             Jsonb jsonb = JsonbBuilder.create();
 
-            // Check if there's a customerId parameter
-            String customerId = req.getParameter("customerId");
-            if (customerId != null && !customerId.isEmpty()) {
-                // Search for a specific customer by ID
-                CustomerDTO customer = customerBO.getCustomerByCustomerId(customerId, connection);
+            String action = req.getParameter("action");
+            logger.debug("Action parameter: " + action);
 
-                if (customer != null) {
-                    String customerJson = jsonb.toJson(customer);
-                    writer.write(customerJson);
-                } else {
-                    resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Customer not found");
-                }
+            if ("generateCustomerId".equals(action)) {
+                // Logic to generate new customer ID
+                var newCustomerId = customerBO.generateNextCustomerId(connection);
+                logger.debug("New Customer ID: " + newCustomerId);
+                writer.write(jsonb.toJson(newCustomerId));
+
             } else {
-                // Return all customers
-                List<CustomerDTO> customers = customerBO.getCustomers(connection);
-                String customersJson = jsonb.toJson(customers);
-                writer.write(customersJson);
+                // Handle other actions, such as fetching customer details
+                String customerId = req.getParameter("customerId");
+                logger.debug("Customer ID parameter: " + customerId);
+
+                if (customerId != null && !customerId.isEmpty()) {
+                    CustomerDTO customer = customerBO.getCustomerByCustomerId(customerId, connection);
+                    if (customer != null) {
+                        writer.write(jsonb.toJson(customer));
+                    } else {
+                        resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Customer not found");
+                    }
+                } else {
+                    List<CustomerDTO> customers = customerBO.getCustomers(connection);
+                    writer.write(jsonb.toJson(customers));
+                }
             }
-        } catch (Exception e) {
-            logger.error("Error processing request", e);
-            throw new RuntimeException(e);
+        } catch (JsonException | SQLException e) {
+            logger.error("Error in CustomerController doGet", e);
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to process request");
         }
     }
+
 }
