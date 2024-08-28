@@ -1,5 +1,5 @@
 <b>FOOD MART POS - JavaEE Backend</b>
-<br>
+<br><br>
 "Food Mart" is a robust Point of Sale (POS) application tailored specifically for grocery stores, offering a streamlined and user-friendly interface to manage customer interactions, product inventories, and order transactions.<br>
 
 Built using Java EE, Food Mart ensures scalable and reliable performance, making it suitable for both small and large-scale grocery operations.<br>
