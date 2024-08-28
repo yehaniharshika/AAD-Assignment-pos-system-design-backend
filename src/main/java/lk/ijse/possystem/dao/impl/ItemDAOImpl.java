@@ -18,6 +18,7 @@ public class ItemDAOImpl implements ItemDAO {
     public static String GET_ITEMS = "SELECT * FROM item";
     public static String GET_ITEM_BY_ITEM_CODE = "SELECT * FROM item WHERE itemCode=?";
     public static String GET_ALL_ITEM_CODES = "SELECT itemCode FROM item";
+    public static String GET_LAST_ITEM_CODE = "SELECT itemCode FROM `item` ORDER BY itemCode DESC LIMIT 1";
 
     /*@Override
     public boolean saveItem(ItemDTO itemDTO, Connection connection){
@@ -166,6 +167,23 @@ public class ItemDAOImpl implements ItemDAO {
             );
         }
         return null;
+    }
+
+    @Override
+    public String generateId(Connection connection) throws SQLException {
+        String lastItemCode = null;
+
+        ResultSet resultSet = SQLUtil.execute(GET_LAST_ITEM_CODE, connection);
+        if (resultSet.next()) {
+            lastItemCode = resultSet.getString("itemCode");
+        }
+
+        if (lastItemCode != null) {
+            int lastNumber = Integer.parseInt(lastItemCode.split("-")[1]);
+            lastNumber++;
+            return "I-" + String.format("%03d", lastNumber);
+        }
+        return "I-001";
     }
 
     @Override

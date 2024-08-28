@@ -191,7 +191,7 @@ public class CustomerDAOImpl implements CustomerDAO {
         if (lastCustomerId != null) {
             int lastNumber = Integer.parseInt(lastCustomerId.split("-")[1]);
             lastNumber++;
-            return "O-" + String.format("%03d", lastNumber);
+            return "C-" + String.format("%03d", lastNumber);
         }
         return "C-001";
     }
