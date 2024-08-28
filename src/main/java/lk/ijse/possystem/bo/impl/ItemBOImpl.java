@@ -70,4 +70,14 @@ public class ItemBOImpl implements ItemBO {
         }
         return null;
     }
+
+    @Override
+    public List<String> loadAllItemCodes(Connection connection) throws SQLException {
+        return itemDAO.getAllItemCodes(connection);
+    }
+
+    @Override
+    public boolean decreaseItemQuantity(String itemCode, int quantity, Connection connection) throws SQLException {
+        return itemDAO.decreaseItemQuantity(itemCode,quantity,connection);
+    }
 }

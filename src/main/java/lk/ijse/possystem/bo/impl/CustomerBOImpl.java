@@ -73,4 +73,9 @@ public class CustomerBOImpl implements CustomerBO {
         }
         return null;
     }
+
+    @Override
+    public List<String> getAllCustomerIDs(Connection connection) throws SQLException {
+        return customerDAO.getAllCustomerIDs(connection);
+    }
 }
