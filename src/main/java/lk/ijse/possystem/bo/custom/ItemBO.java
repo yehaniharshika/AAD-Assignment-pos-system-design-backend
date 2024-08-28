@@ -12,4 +12,6 @@ public interface ItemBO {
     boolean deleteItem(String itemCode,Connection connection) throws SQLException;
     List<ItemDTO> getItems(Connection connection) throws SQLException;
     ItemDTO getItemByItemCode(String itemCode, Connection connection) throws SQLException;
+    List<String> loadAllItemCodes(Connection connection) throws SQLException;
+    boolean decreaseItemQuantity(String itemCode, int quantity, Connection connection) throws SQLException;
 }
