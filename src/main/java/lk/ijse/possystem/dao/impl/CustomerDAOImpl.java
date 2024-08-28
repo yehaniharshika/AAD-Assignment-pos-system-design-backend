@@ -6,6 +6,7 @@ import lk.ijse.possystem.dto.CustomerDTO;
 import lk.ijse.possystem.entity.Customer;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     public static String DELETE_CUSTOMER = "DELETE FROM customer WHERE customerId = ?";
     public static String GET_CUSTOMERS = "SELECT * FROM customer";
     public static String GET_CUSTOMER_BY_CUSTOMER_ID = "SELECT * FROM customer WHERE customerId=?";
+    public static String GET_ALL_CUSTOMER_IDS = "SELECT customerId FROM customer";
 
     /*@Override
     public boolean saveCustomer(CustomerDTO customerDTO, Connection connection){
@@ -174,5 +176,18 @@ public class CustomerDAOImpl implements CustomerDAO {
             );
         }
         return null;
+    }
+
+    @Override
+    public List<String> getAllCustomerIDs(Connection connection) throws SQLException {
+        List<String> customerIDs = new ArrayList<>();
+        String sql = GET_ALL_CUSTOMER_IDS;
+        ResultSet resultSet = SQLUtil.execute(sql,connection);
+
+        while (resultSet.next()) {
+            customerIDs.add(resultSet.getString("customerId"));
+        }
+
+        return customerIDs;
     }
 }

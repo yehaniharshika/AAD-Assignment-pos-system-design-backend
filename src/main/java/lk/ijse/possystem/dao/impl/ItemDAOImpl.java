@@ -17,6 +17,7 @@ public class ItemDAOImpl implements ItemDAO {
     public static String DELETE_ITEM  = "DELETE FROM item WHERE itemCode = ?";
     public static String GET_ITEMS = "SELECT * FROM item";
     public static String GET_ITEM_BY_ITEM_CODE = "SELECT * FROM item WHERE itemCode=?";
+    public static String GET_ALL_ITEM_CODES = "SELECT itemCode FROM item";
 
     /*@Override
     public boolean saveItem(ItemDTO itemDTO, Connection connection){
@@ -166,4 +167,42 @@ public class ItemDAOImpl implements ItemDAO {
         }
         return null;
     }
+
+    @Override
+    public List<String> getAllItemCodes(Connection connection) throws SQLException {
+        List<String> itemCodes = new ArrayList<>();
+        String sql = GET_ALL_ITEM_CODES;
+        ResultSet resultSet = SQLUtil.execute(sql,connection);
+
+        while (resultSet.next()) {
+            itemCodes.add(resultSet.getString("itemCode"));
+        }
+
+        return itemCodes;
+    }
+
+    @Override
+    public boolean decreaseItemQuantity(String itemCode, int quantity, Connection connection) throws SQLException {
+        String selectQuery = "SELECT qtyOnHand FROM item WHERE itemCode = ?";
+        ResultSet resultSet = SQLUtil.execute(selectQuery, connection, itemCode);
+
+        int currentQty;
+        if (resultSet.next()) {
+            currentQty = resultSet.getInt("qtyOnHand");
+        } else {
+            throw new SQLException("Item not found");
+        }
+
+        // Step 2: Check if there's enough quantity to decrease
+        if (currentQty < quantity) {
+            throw new SQLException("Not enough quantity available");
+        }
+
+        // Step 3: Update the quantity on hand using executeUpdate
+        String updateQuery = "UPDATE item SET qtyOnHand = ? WHERE itemCode = ?";
+        int rowsAffected = SQLUtil.execute(updateQuery, connection, currentQty - quantity, itemCode);
+
+        return rowsAffected > 0;
+    }
+
 }
