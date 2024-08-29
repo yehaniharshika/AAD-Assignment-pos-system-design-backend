@@ -1783,3 +1783,8 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child 
 11:27:38.399 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Action parameter: null
 11:27:38.399 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Order ID parameter: O-005
 11:27:50.185 [http-nio-8081-exec-3] INFO  l.i.p.controller.CustomerController - call order doDelete method
+11:30:58.859 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+11:30:59.482 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+11:30:59.491 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing OrderController with call init method
+11:30:59.509 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+11:30:59.509 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
