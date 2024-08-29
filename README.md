@@ -37,7 +37,7 @@ The back-end of Food Mart is responsible for server-side operations, data proces
 - AJAX or Fetch for data handling
 
 <b>API Documentation</b>
-<br>
+<br><br>
 For API documentation, including available endpoints and methods, refer to
 https://documenter.getpostman.com/view/36189376/2sAXjF9FDb
 <br><br>
