@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.possystem.bo.impl.OrderBOImpl;
+import lk.ijse.possystem.dto.CustomerDTO;
 import lk.ijse.possystem.dto.OrderDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -105,4 +106,41 @@ public class OrderController extends HttpServlet {
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Failed to process request");
         }
     }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.debug("call Order doPut method");
+
+        if (!req.getContentType().toLowerCase().startsWith("application/json") || req.getContentType() == null){
+            //send error
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+
+        try(var writer = resp.getWriter()){
+            var orderId = req.getParameter("orderId");
+
+            Jsonb jsonb = JsonbBuilder.create();
+
+
+            var updateOrder = jsonb.fromJson(req.getReader(), OrderDTO.class);
+            logger.debug("order ID: "+ orderId);
+            logger.debug("updated order data: "+updateOrder);
+
+            boolean isUpdated = orderBO.updateOrder(orderId,updateOrder,connection);
+
+            if (isUpdated) {
+                resp.setStatus(HttpServletResponse.SC_OK);
+                writer.write("order updated successfully");
+            } else {
+                resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                writer.write("order update failed");
+            }
+        }catch (JsonException | SQLException e){
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            e.printStackTrace();
+        }
+    }
+
+
 }
