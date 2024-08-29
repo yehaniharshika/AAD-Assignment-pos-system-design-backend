@@ -142,5 +142,28 @@ public class OrderController extends HttpServlet {
         }
     }
 
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.info("call order doDelete method");
 
+        var orderId = req.getParameter("orderId");
+        if (orderId == null || orderId.isEmpty()) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "order ID is missing");
+            return;
+        }
+
+        try (var writer = resp.getWriter()) {
+            boolean isDeleted = orderBO.deleteOrder(orderId, connection);
+
+            if (isDeleted) {
+                resp.setStatus(HttpServletResponse.SC_OK);
+                writer.write("order deleted successfully");
+            } else {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Failed to delete order");
+            }
+        } catch (JsonException | SQLException e) {
+            logger.error("Error deleting order", e);
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Internal server error");
+        }
+    }
 }
