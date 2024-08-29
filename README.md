@@ -23,3 +23,6 @@ Technologies Used<br>
 - JNDI (Java Naming and Directory Interface)
 - Simple Logging Facade for Java (SLF4J)
 - AJAX or Fetch for data handling
+
+  <b>API Documentation</b>
+  https://documenter.getpostman.com/view/36189376/2sAXjF9FDb
