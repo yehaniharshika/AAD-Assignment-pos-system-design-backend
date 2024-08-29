@@ -1,4 +1,4 @@
-<b>FOOD MART POS - JavaEE Backend</b>
+<h3>FOOD MART POS - JavaEE Backend</h3>
 <br><br>
 "Food Mart" is a robust Point of Sale (POS) application tailored specifically for grocery stores, offering a streamlined and user-friendly interface to manage customer interactions, product inventories, and order transactions.<br>
 
@@ -15,3 +15,11 @@ The front-end of Food Mart is designed to provide a user-friendly interface with
 
 - Back-end<br>
 The back-end of Food Mart is responsible for server-side operations, data processing, and business logic. Developed using Java EE and deployed on the Apache Tomcat server, it ensures reliable performance and robust transaction handling. The system effectively manages inventory, customer data, and order processing, supporting the day-to-day operations of a grocery store.
+
+Technologies Used<br>
+- Java EE
+- MySQL
+- TomcatEE version 10.1.18
+- JNDI (Java Naming and Directory Interface)
+- Simple Logging Facade for Java (SLF4J)
+- AJAX or Fetch for data handling
