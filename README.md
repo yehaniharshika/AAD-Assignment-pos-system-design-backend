@@ -1,5 +1,5 @@
 
-<h1><u>"FOOD MART" POS - JavaEE Backend 🖥️👩‍💻</u></h1>
+<h1><u><b>"FOOD MART" POS - JavaEE Backend 🖥️👩‍💻</b></u></h1>
 <br>
 <br>
 "Food Mart" is a robust Point of Sale (POS) application tailored specifically for grocery stores, offering a streamlined and user-friendly interface to manage customer interactions, product inventories, and order transactions.<br>
@@ -8,7 +8,7 @@ Built using Java EE, Food Mart ensures scalable and reliable performance, making
 
 This project serves as an educational resource for mastering Java EE development, covering best practices in enterprise application development, database integration, and layered architecture design. 
 
-<u>Project Installation</u><br>
+<b>Project Installation</b><br>
 Follow these steps to install and set up the POS Management System:
 
 1. Clone the repository using web url.
@@ -17,7 +17,7 @@ Follow these steps to install and set up the POS Management System:
 4. Run the project.
 
 
-<u>Project Components</u>
+<b>Project Components</b>
 
 - <b>Front-end</b><br>
 The front-end of Food Mart is designed to provide a user-friendly interface with smooth interactions. It leverages HTML, CSS, jQuery, and XMLHttpRequest to create a dynamic and responsive web application, ensuring an intuitive and efficient user experience for managing grocery store operations.
@@ -27,7 +27,8 @@ The front-end of Food Mart is designed to provide a user-friendly interface with
 The back-end of Food Mart is responsible for server-side operations, data processing, and business logic. Developed using Java EE and deployed on the Apache Tomcat server, it ensures reliable performance and robust transaction handling. The system effectively manages inventory, customer data, and order processing, supporting the day-to-day operations of a grocery store.
 
 
-Technologies Used<br>
+<b>Technologies Used</b><br>
+
 - Java EE
 - MySQL
 - TomcatEE version 10.1.18
