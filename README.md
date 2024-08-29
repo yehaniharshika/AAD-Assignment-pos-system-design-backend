@@ -25,4 +25,6 @@ Technologies Used<br>
 - AJAX or Fetch for data handling
 
   <b>API Documentation</b>
+  <br>
+  For API documentation, including available endpoints and methods, refer to
   https://documenter.getpostman.com/view/36189376/2sAXjF9FDb
