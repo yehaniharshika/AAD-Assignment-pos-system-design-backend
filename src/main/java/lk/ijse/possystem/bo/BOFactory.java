@@ -15,7 +15,7 @@ public class BOFactory {
 
     public enum BOTypes{
         CUSTOMER_BO,
-        PRODUCT_BO,
+        ITEM_BO,
         ORDERS_BO,
         ORDER_DETAILS_BO
     }
@@ -24,7 +24,7 @@ public class BOFactory {
         switch (boTypes) {
             case CUSTOMER_BO:
                 return (T) new CustomerBOImpl();
-            case PRODUCT_BO:
+            case ITEM_BO:
                 return (T) new ItemBOImpl();
             case ORDERS_BO:
                 return (T) new OrderBOImpl();

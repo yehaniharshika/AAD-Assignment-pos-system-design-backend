@@ -1752,3 +1752,14 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child 
 10:20:06.856 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - OrderController doGet method called
 10:20:06.875 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - Action parameter: null
 10:20:06.875 [http-nio-8081-exec-5] DEBUG l.i.p.controller.CustomerController - Order ID parameter: O-001
+11:03:05.928 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+11:03:06.726 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+11:03:30.204 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - CustomerController doGet method called
+11:03:30.271 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Action parameter: null
+11:03:30.271 [http-nio-8081-exec-2] DEBUG l.i.p.controller.CustomerController - Customer ID parameter: null
+11:04:38.085 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing CustomerController with call init method
+11:04:38.688 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+11:04:38.698 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - initializing OrderController with call init method
+11:04:38.718 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.CustomerController - connection initialized 
+11:04:38.719 [RMI TCP Connection(2)-127.0.0.1] INFO  l.i.p.controller.ItemController - initializing ItemController with call init method
+11:04:57.909 [http-nio-8081-exec-2] DEBUG l.i.p.controller.ItemController - call Item doGet method
