@@ -1,6 +1,8 @@
 package lk.ijse.possystem.bo.impl;
 
 import lk.ijse.possystem.bo.custom.ItemBO;
+import lk.ijse.possystem.dao.DAOFactory;
+import lk.ijse.possystem.dao.custom.ItemDAO;
 import lk.ijse.possystem.dao.impl.ItemDAOImpl;
 import lk.ijse.possystem.dto.ItemDTO;
 import lk.ijse.possystem.entity.Item;
@@ -11,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemBOImpl implements ItemBO {
-    private ItemDAOImpl itemDAO = new ItemDAOImpl();
+    ItemDAO itemDAO = DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ITEM_DAO);
     @Override
     public boolean saveItem(ItemDTO itemDTO, Connection connection) throws SQLException {
         Item item = new Item(

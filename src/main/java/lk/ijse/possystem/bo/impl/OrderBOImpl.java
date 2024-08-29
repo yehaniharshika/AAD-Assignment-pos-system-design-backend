@@ -1,6 +1,8 @@
 package lk.ijse.possystem.bo.impl;
 
 import lk.ijse.possystem.bo.custom.OrderBO;
+import lk.ijse.possystem.dao.DAOFactory;
+import lk.ijse.possystem.dao.custom.OrderDAO;
 import lk.ijse.possystem.dao.impl.CustomerDAOImpl;
 import lk.ijse.possystem.dao.impl.ItemDAOImpl;
 import lk.ijse.possystem.dao.impl.OrderDAOImpl;
@@ -14,9 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderBOImpl implements OrderBO {
-    private OrderDAOImpl orderDAO = new OrderDAOImpl();
-    private CustomerDAOImpl customerDAO = new CustomerDAOImpl();
-    private ItemDAOImpl itemDAO = new ItemDAOImpl();
+    OrderDAO orderDAO = DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ORDER_DAO);
+    CustomerDAOImpl customerDAO = DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.CUSTOMER_DAO);
+    ItemDAOImpl itemDAO = DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ITEM_DAO);
     @Override
     public boolean saveOrder(OrderDTO orderDTO, Connection connection) throws SQLException {
         Order order = new Order(
