@@ -24,9 +24,10 @@ Technologies Used<br>
 - Simple Logging Facade for Java (SLF4J)
 - AJAX or Fetch for data handling
 
-  <b>API Documentation</b>
-  <br>
-  For API documentation, including available endpoints and methods, refer to
-  https://documenter.getpostman.com/view/36189376/2sAXjF9FDb
+<b>API Documentation</b>
+<br>
+For API documentation, including available endpoints and methods, refer to
+https://documenter.getpostman.com/view/36189376/2sAXjF9FDb
 <br><br>
 The frontend code for the POS Management System is available in a separate repository. You can find it by this link 
+https://github.com/yehaniharshika/AAD-Assignment-pos-system-design-frontend.git
